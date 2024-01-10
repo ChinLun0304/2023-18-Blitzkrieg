@@ -1,0 +1,12 @@
+#Use statement as below on terminal to check the port connecting to devices
+#python -m serial.tools.list_ports
+
+import serial
+
+ser = serial.Serial(port='COM3', baudrate=9600)
+
+while True:
+    value = ser.readline()
+    ser.write("Go orange")
+    valueInString = str(value, 'UTF-8')
+    print(valueInString)
